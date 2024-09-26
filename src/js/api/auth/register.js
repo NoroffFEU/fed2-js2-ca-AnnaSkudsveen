@@ -1,10 +1,10 @@
-import { API_AUTH_LOGIN, API_AUTH_REGISTER } from "../constants.js";
+import { API_AUTH_REGISTER } from "../constants.js";
 
 export async function register(name, email, password) {
   console.log(API_AUTH_REGISTER);
   console.log(`name: ${name}, email: ${email}, password: ${password}`);
   try {
-    fetch(`https://v2.api.noroff.dev/auth/register`, {
+    fetch(`${API_AUTH_REGISTER}`, {
       method: "POST",
       body: JSON.stringify({
         name: `${name}`,
@@ -32,6 +32,6 @@ export async function register(name, email, password) {
       });
   } catch (error) {
     console.error("Error during registration:", error);
-    throw error; // Rethrow the error to handle it in `onRegister`
+    throw error;
   }
 }
