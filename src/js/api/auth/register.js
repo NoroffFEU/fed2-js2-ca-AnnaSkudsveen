@@ -1,8 +1,6 @@
 import { API_AUTH_LOGIN, API_AUTH_REGISTER } from "../constants.js";
 
 export async function register(name, email, password) {
-  console.log("Received parameters:" + name + email + password);
-  console.log("Register function");
   console.log(API_AUTH_REGISTER);
   console.log(`name: ${name}, email: ${email}, password: ${password}`);
   try {
@@ -11,13 +9,13 @@ export async function register(name, email, password) {
       body: JSON.stringify({
         name: `${name}`,
         email: `${email}`,
-        password: `${password}`,
+        password: `${password}`
       }),
 
       // header taken from: https://mollify.noroff.dev/content/feu1/javascript-1/module-5/api-methods/http-post-request-method?nav=programme
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
+        "Content-type": "application/json; charset=UTF-8"
+      }
     })
       .then((response) => {
         response.json();
