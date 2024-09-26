@@ -1,8 +1,6 @@
 import { API_AUTH_REGISTER } from "../constants.js";
 
 export async function register(name, email, password) {
-  console.log(API_AUTH_REGISTER);
-  console.log(`name: ${name}, email: ${email}, password: ${password}`);
   try {
     fetch(`${API_AUTH_REGISTER}`, {
       method: "POST",
@@ -18,17 +16,19 @@ export async function register(name, email, password) {
       }
     })
       .then((response) => {
-        response.json();
-        console.log(response);
         if (!response.ok) {
-          alert("Error: try again");
-        } else {
-          alert("New user created");
-          window.location.replace("/auth/login/index.html");
+          return response.json().then((errorData) => {
+            console.error("Error:", errorData);
+            alert("Error: try again");
+            throw new Error("Registration failed");
+          });
         }
+
+        return response.json();
       })
       .then((data) => {
         console.log("data: " + data);
+        // window.location.replace("/auth/login/index.html");
       });
   } catch (error) {
     console.error("Error during registration:", error);
