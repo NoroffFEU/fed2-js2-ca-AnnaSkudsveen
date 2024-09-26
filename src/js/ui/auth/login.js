@@ -5,6 +5,8 @@ export async function onLogin(event) {
 
   const form = document.forms.login;
 
+  console.log(form);
+
   const email = form.email.value;
   const password = form.password.value;
 
