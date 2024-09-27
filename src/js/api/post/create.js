@@ -24,6 +24,7 @@ export async function createPost(title, body) {
       })
       .then((data) => {
         console.log("post data: ", data);
+        window.location.href = "/index.html";
       });
   } catch (error) {
     console.error("Error during posting:", error);
