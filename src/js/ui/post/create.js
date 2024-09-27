@@ -4,11 +4,11 @@ export async function onCreatePost(event) {
   event.preventDefault();
   const form = document.forms.createPost;
   console.log(form);
-  const name = form.name.value;
+  const title = form.title.value;
   const body = form.body.value;
   //   const media = form.media.value;
 
-  console.log(`name: ${name}, body ${body}`);
+  console.log(`title: ${title}, body ${body}`);
 
-  createPost(name, body);
+  createPost(title, body);
 }
