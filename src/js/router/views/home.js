@@ -14,7 +14,7 @@ if (bearerToken) {
 
   const response = await fetch(`${API_SOCIAL_POSTS}`, options);
   const data = await response.json();
-
+  console.log(data);
   showPosts(data.data);
 } else {
   authGuard();
@@ -31,6 +31,15 @@ function showPosts(postData) {
       <button>Read more</button>
       </section>
       </a>
-        `;
+      <a class="post-link-card" href="post/edit/index.html?id=${post.id}">
+    <button>Edit</button>
+    </a>
+    `;
   });
+
+  // const author = localStorage.getItem("author");
+  // if (postData._author === author) {
+  //   postSection.innerHTML +=
+
+  // }
 }
