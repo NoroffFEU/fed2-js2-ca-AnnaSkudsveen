@@ -20,10 +20,11 @@ export async function login(email, password) {
       .then((data) => {
         console.log("data: ", data);
         if (data.data && data.data.accessToken) {
-          localStorage.setItem("bearerToken", data.data.accessToken);
+          localStorage.setItem("author", data.data.name),
+            localStorage.setItem("bearerToken", data.data.accessToken);
           window.location.href = "/index.html";
         } else {
-          console.error("Access token not found in response");
+          console.error("Not able to log you in, try again");
         }
       });
   } catch (error) {
