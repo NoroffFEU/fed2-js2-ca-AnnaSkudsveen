@@ -1,8 +1,12 @@
 import { authGuard } from "../../utilities/authGuard";
 import { API_KEY, API_SOCIAL_POSTS } from "../../api/constants.js";
+import { onLogout } from "../../ui/auth/logout.js";
 
 const bearerToken = localStorage.getItem("bearerToken");
 const postSection = document.querySelector(".postSection");
+const logoutBtn = document.querySelector(".logoutBtn");
+
+logoutBtn.addEventListener("click", onLogout);
 
 if (bearerToken) {
   const options = {
@@ -36,10 +40,4 @@ function showPosts(postData) {
     </a>
     `;
   });
-
-  // const author = localStorage.getItem("author");
-  // if (postData._author === author) {
-  //   postSection.innerHTML +=
-
-  // }
 }
