@@ -43,7 +43,7 @@ Before setting up this project, ensure you have the following installed:
 1. Clone the repository to your local machine:
     
     ```bash
-    git clone git clone https://github.com/AnnaSkudsveen/fed2-js2-ca-AnnaSkudsveen
+    git clone https://github.com/AnnaSkudsveen/fed2-js2-ca-AnnaSkudsveen
 
     ```
     
