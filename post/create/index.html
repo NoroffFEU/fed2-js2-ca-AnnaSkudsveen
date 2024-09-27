@@ -1,16 +1,35 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
-  </head>
-  <body>
-    <h1>Create Post</h1>
 
-    <form name="createPost">
-      <button>Create Post</button>
-    </form>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noroff FED2 JS2 CA</title>
+  <script type="module" src="/src/app.js"></script>
+</head>
+
+<body>
+  <h1>Create Post</h1>
+  <form name="createPost">
+    <div>
+      <label for="title">Title</label>
+      <input id="title" type="text" name="title" required title="Title of post" />
+    </div>
+
+    <div>
+      <label for="body">Text</label>
+      <input id="body" type="text" name="body" required title="Write your post here!" />
+    </div>
+
+    <!-- <div>
+      <label for="media">Image</label>
+      <input id="media" type="text" name="media"
+        pattern="[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
+        title="Please enter a valid noroff.no or stud.noroff.no address" />
+    </div> -->
+
+    <button>Create Post</button>
+  </form>
+</body>
+
 </html>
